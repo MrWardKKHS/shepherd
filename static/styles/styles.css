@@ -2,18 +2,27 @@
     margin: 0;
     padding: 0;
 }
+
 body{
     min-height: 100vh;
-    background-color: #1a1e21;
+    background-color: #eee;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url("../images/scott-martin-CU_HQkbkoKE-unsplash.jpg") no-repeat center center/cover;
+    background-position: cover;
+    background-attachment: fixed;
 }
+
 nav{
     background-color: white;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    overflow: hidden;
 }
+
 nav ul{
     width: 100%;
     list-style: none;
@@ -21,9 +30,11 @@ nav ul{
     justify-content: flex-end;
     align-items: center;
 }
+
 nav li{
     height: 50px;
 }
+
 nav a{
     height: 100%;
     padding: 0 30px;
@@ -32,6 +43,7 @@ nav a{
     align-items: center;
     color: black;
 }
+
 nav a:hover{
     background-color: #f0f0f0;
 }
@@ -43,8 +55,52 @@ nav img {
     padding: 5px;
 }
 
-.container {
+nav .container {
     display: flex;
     align-items: center;
     gap: 20px;
+}
+
+main {
+    max-width: 40rem;
+    margin: 0 auto;
+}
+
+section {
+  max-width: 40rem;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 3rem;
+  border-radius: 15px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+#connect-section {
+
+}
+
+
+#connect-section h1 {
+    margin: 0 auto;
+    padding-bottom: 1.5rem;
+    text-align: center;
+}
+
+.experience-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.experience-container div {
+    padding-top: 2rem;
+}
+
+#big-number-section {
+    display: flex;
+    justify-content: space-around;
+}
+
+#big-number-section span{
+    font-size: 4rem;
+    font-weight: 400;
 }
