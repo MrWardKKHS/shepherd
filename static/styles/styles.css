@@ -104,3 +104,35 @@ section {
     font-size: 4rem;
     font-weight: 400;
 }
+
+#how-it-works-section {
+    text-align: center;
+}
+
+#how-it-works-section h3 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.card-container {
+    display: flex;
+    text-align: left;
+    justify-content: space-between;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.how-it-works-card {
+    margin-right: 0.5rem;
+}
+
+.how-it-works-card img{
+    width: 40px;
+    padding-right: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 50%;
+}

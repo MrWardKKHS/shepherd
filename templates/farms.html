@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for farm in farms %}
+        <p><a href="/farms/{{farm['id']}}">Farm {{farm['id']}}</a></p>
+    {% endfor %}
+{% endblock %}
