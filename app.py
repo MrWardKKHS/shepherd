@@ -1,4 +1,4 @@
-from flask import Flask, render_template, abort
+from flask import Flask, render_template, abort, session, request, redirect, flash
 from livereload import Server
 import sqlite3
 
@@ -6,16 +6,44 @@ DB = 'db.db'
 
 app = Flask(__name__)
 app.debug = True
+app.config['SECRET_KEY'] = "MyReallySecretKey"
 
-def query_db(sql, one=False):
+def query_db(sql, args=(), one=False):
     con = sqlite3.connect(DB)
     con.row_factory = sqlite3.Row
     cursor = con.cursor()
-    cursor.execute(sql)
+    cursor.execute(sql, args)
     if one: 
         return cursor.fetchone()
     else:
         return cursor.fetchall()
+
+
+@app.route('/login', methods=["GET","POST"])
+def login():
+    #if the user posts a username and password
+    if request.method == "POST":
+        #get the username and password
+        username = request.form['username']
+        password = request.form['password']
+        #try to find this user in the database- note- just keepin' it simple so usernames must be unique
+        sql = "SELECT * FROM user WHERE username = ?"
+        user = query_db(sql=sql,args=(username,),one=True)
+        if user:
+            #we got a user!!
+            #check password matches-
+            if check_password_hash(user[2],password):
+                #we are logged in successfully
+                #Store the username in the session
+                session['user'] = user
+                flash("Logged in successfully")
+            else:
+                flash("Password incorrect")
+        else:
+            flash("Username does not exist")
+    #render this template regardles of get/post
+    return render_template('login.html')
+
 
 @app.route('/')
 def index():
