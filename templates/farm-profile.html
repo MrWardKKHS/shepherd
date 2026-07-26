@@ -1,5 +1,120 @@
 {% extends 'base.html' %}
+
 {% block content %}
-    <p>{{farm['name']}}</p>
-    <p>{{farm['address']}}</p>
+
+<main>
+    <section class="farm">
+
+        <img
+            class="farm-hero"
+            src="{{ url_for('static', filename='images/uploads/' + farm['image_src']) }}"
+            alt="{{ farm['name'] }}">
+
+        <h1>{{ farm['name'] }}</h1>
+
+        <p class="farm-location">
+            {{ farm['address'] }}
+        </p>
+
+        <div class="row">
+
+            <div class="col-md-7">
+                <div class="farm-card">
+
+                    <h2>About</h2>
+
+                    <p>{{ farm['description'] }}</p>
+
+                    <table class="table">
+                        <tr>
+                            <th>Farm type</th>
+                            <td>{{ farm['type'] }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Organic</th>
+                            <td>
+                                {% if farm['organic'] %}
+                                    Yes
+                                {% else %}
+                                    No
+                                {% endif %}
+                            </td>
+                        </tr>
+
+                        {% if farm['website_url'] %}
+                        <tr>
+                            <th>Website</th>
+                            <td>
+                                <a
+                                    href="{{ farm['website_url'] }}"
+                                    target="_blank">
+                                    {{ farm['website_url'] }}
+                                </a>
+                            </td>
+                        </tr>
+                        {% endif %}
+
+                    </table>
+
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <div class="farm-card">
+
+                    <h2>Location</h2>
+
+                    <p>{{ farm['address'] }}</p>
+
+                    <iframe
+                        class="farm-map"
+                        loading="lazy"
+                        src="https://maps.google.com/maps?q={{ farm['address'] | urlencode }}&output=embed">
+                    </iframe>
+
+                </div>
+            </div>
+
+        </div>
+
+        <section class="farm-positions">
+
+            <h2>Open Positions</h2>
+
+            <div class="row">
+
+                {% for position in positions %}
+
+                <div class="col-md-6 mb-4">
+
+                    <div class="farm-position">
+
+                        <span class="farm-position-type">
+                            {{ position['type'] }}
+                        </span>
+
+                        <h3>{{ position['title'] }}</h3>
+
+                        <p>{{ position['description'] }}</p>
+
+                        <a
+                            class="btn btn-success"
+                            href="/position/{{ position['id'] }}">
+                            View Position
+                        </a>
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        </section>
+
+    </section>
+</main>
+
 {% endblock %}

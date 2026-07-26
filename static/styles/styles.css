@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body{
@@ -139,4 +140,261 @@ section {
     border-radius: 50%;
 }
 
+/* Register farm page */
 
+.farm-register {
+    color: darkslategray;
+    line-height: 1.5;
+}
+
+.farm-register > p {
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+
+/* Form */
+
+.farm-register label {
+    font-weight: 600;
+}
+
+.farm-register input,
+.farm-register select,
+.farm-register textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    font: inherit;
+    color: #222;
+    border: 1px solid darkslategrey;
+    border-radius: 6px;
+}
+
+.farm-register textarea {
+    min-height: 8rem;
+    resize: vertical;
+}
+
+
+/* Focus */
+
+.farm-register input:focus,
+.farm-register select:focus,
+.farm-register textarea:focus {
+    outline: 2px solid #4f765d;
+    outline-offset: 1px;
+    border-color: #4f765d;
+}
+
+
+/* File upload */
+
+.farm-register input[type="file"] {
+    background-color: white;
+}
+
+.farm-register-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Checkbox */
+
+.farm-register-checkbox input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: #3f684d;
+}
+
+
+/* Submit button */
+
+.farm-register button {
+    padding: 12px 20px;
+    font: inherit;
+    font-weight: 600;
+    color: white;
+    background-color: #3f684d;
+    border: none;
+    border-radius: 6px;
+    margin-top: 1rem;
+}
+
+.farm-register button:hover {
+    background-color: #31543d;
+}
+
+
+/* FARM PROFILE */
+
+.farm {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 24px;
+}
+
+.farm h1 {
+    margin: 20px 0 4px;
+    font-size: 2.2rem;
+    color: #243b2f;
+}
+
+.farm h2 {
+    color: #243b2f;
+}
+
+.farm h3 {
+    color: #26382e;
+}
+
+.farm-location {
+    margin-top: 0;
+    margin-bottom: 28px;
+    color: #5f6b64;
+}
+
+
+/* Hero image */
+
+.farm-hero {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+/* Cards */
+
+.farm-card {
+    height: 100%;
+    padding: 24px;
+    background-color: white;
+    border: 1px solid #d8ddd8;
+    border-radius: 12px;
+}
+
+.farm-card h2 {
+    margin-top: 0;
+}
+
+
+/* Farm details */
+
+.farm table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.farm th {
+    width: 130px;
+    color: #26382e;
+}
+
+.farm td,
+.farm th {
+    padding: 10px 0;
+    vertical-align: top;
+}
+
+.farm a {
+    color: #3f684d;
+}
+
+
+/* Map */
+
+.farm-map {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: 8px;
+}
+
+
+/* Positions */
+
+.farm-positions {
+    margin-top: 40px;
+}
+
+.farm-position {
+    height: 100%;
+    padding: 24px;
+    background-color: white;
+    border: 1px solid #d8ddd8;
+    border-radius: 12px;
+}
+
+.farm-position h3 {
+    margin-top: 8px;
+}
+
+.farm-position-type {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 0.9rem;
+    color: #31543d;
+    background-color: #eef4ef;
+    border-radius: 20px;
+}
+
+.farm-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.farm-list-card {
+    overflow: hidden;
+    background-color: white;
+    border: 1px solid #d8ddd8;
+    border-radius: 12px;
+}
+
+.farm-list-card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.farm-list-card > div {
+    padding: 20px;
+}
+
+.farm-list-card h2 {
+    margin: 0 0 6px;
+    color: #243b2f;
+}
+
+.farm-list-card p {
+    margin: 0 0 14px;
+    color: #5f6b64;
+}
+
+.farm-list-card span {
+    display: inline-block;
+    margin: 0 6px 16px 0;
+    padding: 4px 10px;
+    font-size: 0.9rem;
+    color: #31543d;
+    background-color: #eef4ef;
+    border-radius: 20px;
+}
+
+.farm-list-card a {
+    display: block;
+    width: fit-content;
+    padding: 8px 14px;
+    color: white;
+    background-color: #3f684d;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.farm-list-card a:hover {
+    background-color: #31543d;
+}

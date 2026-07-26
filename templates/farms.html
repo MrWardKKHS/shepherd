@@ -1,6 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
-    {% for farm in farms %}
-        <p><a href="/farms/{{farm['id']}}">Farm {{farm['id']}}</a></p>
-    {% endfor %}
+    <section>
+        {% if farms %}
+        <div class="farm-list">
+            {% for farm in farms %}
+                <a href="/farms/{{farm['id']}}">
+                    <article class="farm-list-card">
+                        <img
+                            src="{{ url_for('static', filename='images/uploads/' + farm['image_src']) }}"
+                            alt="{{ farm['name'] }}">
+
+                        <div>
+                            <h2>{{ farm['name'] }}</h2>
+                            <p>{{ farm['address'] }}</p>
+                            <span>{{ farm['type'] }}</span>
+                            {% if farm['organic'] %}
+                                <span>Organic</span>
+                            {% endif %}
+                        </div>
+                    </article>
+                </a>
+            {% endfor %}
+        </div>
+        {% else %}
+            <p>No farms do display</p>
+            <a href="/register-a-farm">Register a farm</a>
+        {% endif %}
+    </section> 
 {% endblock %}

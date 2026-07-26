@@ -3,10 +3,16 @@
         <img src="http://www.placecats.com/300/300" alt="">
         <a href="/"><h2>Shepherd</h2></a>
         <ul>
-            <li><a href="/farmers">Farms</a></li>
+            <li><a href="/register-a-farm">Register a Farm</a></li>
+            <li><a href="/farms">Farms</a></li>
             <li><a href="#">Apprentices</a></li>
             <li><a href="/contact">Contact Us</a></li>
-            <li class="login"><a href="/login">Log in</a></li>
+            {% if not session['user'] %}
+                <li class="login"><a href="/login">Log in</a></li>
+                <li class="login"><a href="/signup">Sign up</a></li>
+            {% else %}
+            <li><a href="/logout">Log out {{session['user']['username']}}</a></li>
+            {% endif %}
         </ul>
     </div>
 </nav>
