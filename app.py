@@ -119,65 +119,27 @@ def logout():
 
 @app.route("/register-a-farm")
 def register_farm():
-    if not session['user']:
-        flash('Please log in to continue')
-        return redirect('/login?redirect=register-a-farm')
+    pass
+    # Todo 
+    # Complete this function. The user needs to always be logged in. 
+    # Send then to the loginpage if they are not. 
+    # The login page can accept query params. Add ?redirect=register-a-farm to send them back here afterwards. 
 
-    farm_types = query_db(
-        """
-        SELECT id, type
-        FROM farmType
-        ORDER BY type
-        """
-    )
+    # The form needs to be popluated with the farm types. Get them from the db
+    # Show the form. 
 
-    return render_template(
-        "register-a-farm.html",
-        farm_types=farm_types
-    )
+    # Temp to remove flask errors
+    return ""
+
 
 
 @app.post("/add_farm")
 def add_farm():
-    # User will always be logged in
-    user_id = session['user']['uuid']
-
-    # Following inputs are mandatory
-    name = request.form["name"]
-    address = request.form["address"]
-    farm_type = request.form["type"]
-    description = request.form["description"]
-    website_url = request.form["website_url"]
-
-    # unchecked checkboxes are not present in a form
-    organic = request.form.get("organic", 0)
-
-    filename = request.files["file"].filename
-    file = request.files["file"]
-
-    # Save the file to the uploads folder
-    if file:
-        file.save(UPLOAD_FOLDER / filename)
-
-    sql = """
-        INSERT INTO farms
-        (user_id, name, address, image_src, description, farm_type, website_url, organic)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-    """
-
-    query_db(
-        sql,
-        (
-            user_id, 
-            name,
-            address,
-            filename,
-            description,
-            farm_type,
-            website_url, 
-            organic
-        )
-    )
+    # TODO 
+    # Get the current user's uuid. They will always be logged in
+    # get the data from the form
+    # Save the image to static/images/uploads
+    # Write a query to save the data to the db
 
     return redirect("/farms")
 

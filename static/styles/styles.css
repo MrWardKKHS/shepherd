@@ -140,92 +140,6 @@ section {
     border-radius: 50%;
 }
 
-/* Register farm page */
-
-.farm-register {
-    color: darkslategray;
-    line-height: 1.5;
-}
-
-.farm-register > p {
-    margin-bottom: 2rem;
-    line-height: 1.5;
-}
-
-
-/* Form */
-
-.farm-register label {
-    font-weight: 600;
-}
-
-.farm-register input,
-.farm-register select,
-.farm-register textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 16px;
-    font: inherit;
-    color: #222;
-    border: 1px solid darkslategrey;
-    border-radius: 6px;
-}
-
-.farm-register textarea {
-    min-height: 8rem;
-    resize: vertical;
-}
-
-
-/* Focus */
-
-.farm-register input:focus,
-.farm-register select:focus,
-.farm-register textarea:focus {
-    outline: 2px solid #4f765d;
-    outline-offset: 1px;
-    border-color: #4f765d;
-}
-
-
-/* File upload */
-
-.farm-register input[type="file"] {
-    background-color: white;
-}
-
-.farm-register-checkbox {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-/* Checkbox */
-
-.farm-register-checkbox input {
-    width: 18px;
-    height: 18px;
-    margin: 0;
-    accent-color: #3f684d;
-}
-
-
-/* Submit button */
-
-.farm-register button {
-    padding: 12px 20px;
-    font: inherit;
-    font-weight: 600;
-    color: white;
-    background-color: #3f684d;
-    border: none;
-    border-radius: 6px;
-    margin-top: 1rem;
-}
-
-.farm-register button:hover {
-    background-color: #31543d;
-}
 
 
 /* FARM PROFILE */
@@ -398,3 +312,5 @@ section {
 .farm-list-card a:hover {
     background-color: #31543d;
 }
+
+/* TODO: Register a farm page */

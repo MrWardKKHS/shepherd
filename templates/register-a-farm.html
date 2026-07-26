@@ -1,77 +1,9 @@
 {% extends "base.html" %}
-
 {% block content %}
 
 <section class="farm-register">
-    <h1>Register a Farm</h1>
+    <!-- TODO: Markup form -->
 
-    <p>
-        Add your farm and tell potential workers what makes it a great place
-        to work.
-    </p>
-    <form action="/add_farm" method="POST" enctype="multipart/form-data">
 
-    <label for="name">Farm name</label>
-    <input
-        type="text"
-        id="name"
-        name="name"
-        placeholder="Green Valley Farm"
-        required>
-
-    <label for="address">Farm address</label>
-    <input
-        type="text"
-        id="address"
-        name="address"
-        placeholder="123 River Road, Cambridge"
-        required>
-
-    <label for="farm-type">Farm type</label>
-    <select id="farm-type" name="type" required>
-        <option value="" selected disabled>Select a farm type</option>
-
-        {% for farm_type in farm_types %}
-            <option value="{{ farm_type['id'] }}">
-                {{ farm_type['type'] }}
-            </option>
-        {% endfor %}
-    </select>
-
-    <label for="file">Farm image</label>
-    <input
-        type="file"
-        id="file"
-        name="file"
-        accept="image/*"
-        required>
-
-    <label for="description">Farm description</label>
-    <textarea
-        id="description"
-        name="description"
-        rows="6"
-        placeholder="Describe the farm, the work you do, and what makes it special."
-        required></textarea>
-
-    <label for="website_url">Farm website</label>
-    <input
-        type="url"
-        id="website_url"
-        name="website_url"
-        placeholder="https://example.co.nz">
-
-    <div class="farm-register-checkbox">
-        <input
-            type="checkbox"
-            id="organic"
-            name="organic"
-            value="1">
-        <label for="organic">Organic farm</label>
-    </div>
-
-    <button type="submit">Register Farm</button>
-
-    </form>
 </section>
 {% endblock %}
